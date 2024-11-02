@@ -2,10 +2,15 @@ export const metadata = {
     title: 'Home',
 }
 
-export default function Page() {
-    return (
-        <div>
-            <h1>Hell123o !</h1>
-        </div>
-    )
+const URL = 'https://nomad-movies.nomadcoders.workers.dev/movies'
+
+async function getMovies() {
+    const response = await fetch(URL)
+    const json = response.json()
+    return json
+}
+
+export default async function Page() {
+    const movies = await getMovies()
+    return <div>{JSON.stringify(movies)}</div>
 }
