@@ -1,3 +1,6 @@
+// css import
+import '../styles/globalStyles.css'
+
 import { Metadata } from 'next'
 import Navigation from '../components/navigation'
 
